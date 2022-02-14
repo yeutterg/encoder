@@ -1,5 +1,13 @@
-ClickEncoder
-=============
+ClickEncoder for ESP32
+======================
+
+This is a rotary encoder library that *should* work with ESP32/ESP8266 devices running in an Arduino programming environment. I have done limited testing other than with the [Adafruit HUZZAH32 ESP32 Feather board](https://www.adafruit.com/product/3405).
+
+Most of the code here is not my own: 
+- The original library was [0xPIT's ClickEncoder](https://github.com/0xPIT/encoder), which had AVR dependencies that did not work on ESP devices.
+- ClickEncoder was [forked by soligen2010](https://github.com/soligen2010/encoder) to add ESP8266 support, but I had to make an additional change to make it work on my Adafruit ESP32 board.
+
+---
 
 > Arduino library to handle rotary encoders **with** buttons as a user input device.
 Arduino RotaryEncoder with Button Implementation.
