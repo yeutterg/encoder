@@ -174,7 +174,7 @@ void ClickEncoder::service(void)
   //
 #ifndef WITHOUT_BUTTON
   unsigned long currentMillis = millis();
-  unsigned long millisSinceLastCheck = currentMillis - lastButtonCheck;
+  uint16_t millisSinceLastCheck = currentMillis - lastButtonCheck;
   if ((pinBTN > 0 || (pinBTN == 0 && buttonOnPinZeroEnabled))        // check button only, if a pin has been provided
       && (millisSinceLastCheck >= ENC_BUTTONINTERVAL))            // checking button is sufficient every 10-30ms
   { 
@@ -220,7 +220,7 @@ void ClickEncoder::service(void)
     }
   
     if (doubleClickTicks > 0) {
-      doubleClickTicks -= min(uint16_t(millisSinceLastCheck), doubleClickTicks);
+      doubleClickTicks -= min(millisSinceLastCheck, doubleClickTicks);
       if (doubleClickTicks == 0) {
         button = Clicked;
       }
